@@ -34,6 +34,8 @@ def formatting():
 
 if __name__ == "__main__":
     print('txt 转 csv工具 for Paratranz, Copyright 2022 Ritenseki.')
+    print('Ritenseki on Github: https://github.com/Ritenseki')
+    # print('本工具免费提供。')
     print('开始转换？')
     inputting = input('[Y/n]')
     if inputting == 'Y':
