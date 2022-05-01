@@ -1,14 +1,18 @@
 # coding = UTF-8
-import pandas as pd
+import os
 
-if __name__ == "__main__":
-    filesource = r'.\FileSource/sample.txt'
-    # print(filesource)
+import pandas as pd
+import fnmatch
+
+
+def formatting():
+    # filesource: str = rf'.\FileSource/sample.txt'
     with open(filesource, encoding='UTF-8') as file:
         name = file.name.rstrip('.txt')
+        keys = name.lstrip(r'.\FileSource/')
+
         key = []
         text = []
-        keys = name.lstrip(r'.\FileSource/')
         # print(name)
         # print(keys)
         keynum = 1
@@ -23,3 +27,14 @@ if __name__ == "__main__":
         formatdata = data
         # print(data)
         formatdata.to_csv(f'{name}.csv', index=False)
+        file.close()
+    print('Formatting Done!')
+
+
+if __name__ == "__main__":
+    sourcedirs = os.listdir('.\FileSource')
+    for f in sourcedirs:
+        if fnmatch.fnmatch(f, '*.txt'):
+            filesource = rf'.\FileSource/{f}'
+            print(filesource)
+            formatting()
