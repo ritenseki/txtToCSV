@@ -1,19 +1,20 @@
 import pandas as pd
 
 if __name__ == "__main__":
-    with open(r'Inputs/sample.txt') as file:
-        name = file.name
-        countline = 0
+    filesource = 'FileSource/sample.txt'
+    # print(filesource)
+    with open(filesource, encoding='UTF-8') as file:
+        name = file.name.rstrip('.txt')
+        key = []
+        text = []
+        keys = name.lstrip('FileSource/')
+        print(name)
         for line in file.readlines():
-            print(line)
             line = line.strip()
-            paragraph = []
-            paragraph.append(line)
-            paragraph[countline] = line
 
-            countline = countline + 1
-
+            key.append(rf'key_{keys}')
+            text.append(line)
+        paragraph = {'keys(csv文件索引)': key, 'text(csv文件索引)': text}
         data = pd.DataFrame(paragraph)
         formatdata = data
-        # print(formatdata)
         formatdata.to_csv(f'{name}.csv', index=False,)
