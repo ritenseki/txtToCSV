@@ -1,5 +1,6 @@
 # coding = UTF-8
 import os
+import sys
 
 import pandas as pd
 import fnmatch
@@ -32,9 +33,27 @@ def formatting():
 
 
 if __name__ == "__main__":
-    sourcedirs = os.listdir('.\FileSource')
-    for f in sourcedirs:
-        if fnmatch.fnmatch(f, '*.txt'):
-            filesource = rf'.\FileSource/{f}'
-            print(filesource)
-            formatting()
+    print('txt 转 csv工具 for Paratranz, Copyright 2022 Ritenseki.')
+    print('开始转换？')
+    inputting = input('[Y/n]')
+    if inputting == 'Y':
+        try:
+            sourcedirs = os.listdir('.\FileSource')
+        except FileNotFoundError as error:
+            print('找不到FileSource目录，是否新建？')
+            inp = input('[Y/n]')
+            if inp == 'Y':
+                os.makedirs('FileSource')
+            else:
+                sys.exit()
+
+        else:
+            for f in sourcedirs:
+                if fnmatch.fnmatch(f, '*.txt'):
+                    filesource = rf'.\FileSource/{f}'
+                    print(filesource)
+                    formatting()
+        finally:
+            sys.exit()
+    else:
+        sys.exit()
