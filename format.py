@@ -19,7 +19,7 @@ def formatting():
         keynum = 1
         for line in file.readlines():
             line = line.strip()
-            key.append(rf'key_{keys}_line{keynum}')
+            key.append(rf'{keys}_line{keynum}')
             text.append(line)
             keynum = keynum + 1
 
