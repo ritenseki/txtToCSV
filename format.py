@@ -23,7 +23,7 @@ def formatting():
             text.append(line)
             keynum = keynum + 1
 
-        paragraph = {'keys(csv文件索引)': key, 'text(csv文件索引)': text}
+        paragraph = {'keys(脚本冗余，无需翻译)': key, 'text(脚本冗余，无需翻译)': text}
         data = pd.DataFrame(paragraph)
         formatdata = data
         # print(data)
