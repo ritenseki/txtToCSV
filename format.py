@@ -7,7 +7,6 @@ import fnmatch
 
 
 def formatting():
-    # filesource: str = rf'.\FileSource/sample.txt'
     with open(filesource, encoding='UTF-8') as file:
         name = file.name.rstrip('.txt')
         keys = name.lstrip(r'.\FileSource/')
@@ -53,7 +52,7 @@ if __name__ == "__main__":
             for f in sourcedirs:
                 if fnmatch.fnmatch(f, '*.txt'):
                     filesource = rf'.\FileSource/{f}'
-                    print(filesource)
+                    # print(filesource)
                     formatting()
         finally:
             sys.exit()
