@@ -24,7 +24,7 @@ if __name__ == "__main__":
             date = datetime.date.today()
             with open(rf".\FileSource\{date}.txt", encoding="UTF-8", mode="w") as final:
                 for each in sourcedirs:
-                    with open(rf".\OriginalFile\{each}") as f:
+                    with open(rf".\OriginalFile\{each}", encoding="UTF-8") as f:
                         # print(f.readlines())
                         for fline in f.readlines():
                             finalline= fline.rstrip("\n")
