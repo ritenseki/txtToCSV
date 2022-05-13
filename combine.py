@@ -31,7 +31,10 @@ if __name__ == "__main__":
                             final.write(finalline)
                             # final.write("。")
                         final.write("\n")
+                print('Done!')
         finally:
+            i = input("按任意键继续")
             sys.exit()
     else:
+        i = input("按任意键继续")
         sys.exit()

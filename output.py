@@ -18,6 +18,7 @@ if __name__ == "__main__":
             if inp == 'Y':
                 os.makedirs('Translated')
             else:
+                i = input("按任意键继续")
                 sys.exit()
 
         else:
@@ -30,12 +31,15 @@ if __name__ == "__main__":
                     filename = f'{filen}.txt'
                     file = open(filename, encoding='UTF-8', mode='w')
                     dataframe = pd.DataFrame.dropna(pd.read_csv(f'{filesource}', usecols=[1], engine='python'))
-                    print(dataframe.values)
-                    for line in dataframe.values:
+                    # print(dataframe.values)
+                    for line in (dataframe.values):
                         for text in line:
+                            text = str(text)
+                            # print(text)
                             file.write(text)
                             file.write('\n')
                     print('Done!')
                     file.close()
         finally:
+            inppput = input("按任意键继续")
             sys.exit()

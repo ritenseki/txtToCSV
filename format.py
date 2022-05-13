@@ -28,7 +28,6 @@ def formatting():
         # print(data)
         formatdata.to_csv(f'{name}.csv', index=False)
         file.close()
-    print('Formatting Done!')
 
 
 if __name__ == "__main__":
@@ -54,7 +53,10 @@ if __name__ == "__main__":
                     filesource = rf'.\FileSource/{f}'
                     # print(filesource)
                     formatting()
+            print('Done!')
         finally:
+            i = input("按任意键继续")
             sys.exit()
     else:
+        i = input("按任意键继续")
         sys.exit()
