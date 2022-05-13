@@ -29,7 +29,7 @@ if __name__ == "__main__":
                         for fline in f.readlines():
                             finalline= fline.rstrip("\n")
                             final.write(finalline)
-                            final.write(" ")
+                            final.write("[换行]")
                         final.write("\n")
                 print('Done!')
         finally:
