@@ -4,8 +4,8 @@ import pandas as pd
 import fnmatch
 
 if __name__ == "__main__":
-    print('csv 导出为 txt工具 for Paratranz, Copyright 2022 Ritenseki.')
-    print('Ritenseki on Github: https://github.com/Ritenseki')
+    print('csv 导出为 txt工具 for Paratranz, Copyright 2022 ritenseki.')
+    print('ritenseki on Github: https://github.com/ritenseki')
     # print('本工具免费提供。')
     print('开始转换？')
     inputting = input('[Y/n]')
